@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+
+
+
+{% block title %} Home {% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <a href="{{url_for('Employee')}}">
+      <div class="card" >
+        <img src="{{url_for('static', filename='img/employee.png')}}"/>
+      </div>
+      </a>
+    </div>
+    <div class="col-sm-3">
+      <a href="{{url_for('Fruit')}}">
+      <div class="card">
+        <img src="{{url_for('static', filename='img/harvest.png')}}" />
+      </div>
+      </a>
+    </div>
+    <div class="col-sm-3">
+      <a href="{{url_for('Item_bill')}}">
+      <div class="card">
+        <img src="{{url_for('static', filename='img/bills.png')}}" />
+      </div>
+      </a>
+    </div>
+    <div class="col-sm-3">
+      <a href="{{url_for('Bill')}}">
+      <div class="card">
+        <img src="{{url_for('static', filename='img/bill.png')}}" />
+      </div>
+      </a>
+    </div>
+  </div>
+  </br>
+  <div class="row">
+    <div class="col-sm-3">
+      <a href="{{url_for('Customer')}}">
+      <div class="card">
+        <img src="{{url_for('static', filename='img/hand-shake.png')}}" />
+      </div>
+      </a>
+    </div>
+    <div class="col-sm-3">
+      <a href="{{url_for('City')}}">
+      <div class="card">
+        <img src="{{url_for('static', filename='img/city.png')}}" />
+      </div>
+      </a>
+    </div>
+    <div class="col-sm-3">
+      <a href="{{url_for('State')}}">
+      <div class="card">
+        <img src="{{url_for('static', filename='img/map.png')}}" />
+      </div>
+      </a>
+    </div>
+    <div class="col-sm-3">
+      <a href="{{url_for('Delivery')}}">
+      <div class="card">
+        <img src="{{url_for('static', filename='img/fast-delivery.png')}}" />
+      </div>
+    </a>
+    </div>
+  </div>
+</div>
+</br>
+
+{% endblock %}
