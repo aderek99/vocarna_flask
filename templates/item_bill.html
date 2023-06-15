@@ -73,7 +73,7 @@
                 </div>
                 <div class="form-group">
                   <label>Broj računa:</label>
-                  <select class="form-control selectpicker"name="racun_id" required="1">
+                  <select class="form-control selectpicker" name="racun_id" required="1">
                     {% for racun in racuni %}
                     <option value="{{ racun.id }}">{{ racun.broj_racuna }}</option>
                     {% endfor %}
@@ -83,7 +83,7 @@
                   <label>Voće:</label>
                   <select class="form-control selectpicker" name="voce_id" required="1">
                     {% for vocka in voce %}
-                    <option value="{{voce.id }}">{{ vocka.naziv }}</option>
+                    <option value="{{ vocka.id }}">{{ vocka.naziv }}</option>
                     {% endfor %}
                   </select>
                 </div>

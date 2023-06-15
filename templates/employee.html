@@ -60,10 +60,12 @@
                 <td>{{row.email}}</td>
                 <td>{{row.telefon}}</td>
                 <td>
+                  <div style="float: right;">
                   <a href="/update/{{row.id}}" class="btn btn-warning btn-s" data-toggle="modal"
                     data-target="#modal-edit{{row.id}}">Uredi</a>
                   <a href="/delete/{{row.id}}" class="btn btn-danger btn-s"
                     onclick="return confirm ('Jeste li sigurni da želite izbrisati?')">Izbriši</a>
+                  </div>
                 </td>
               </tr>
             </tbody>

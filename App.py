@@ -514,10 +514,10 @@ def insert7():
     if request.method == 'POST':
         datum_isporuke=request.form['datum_isporuke']
         kolicina=request.form['kolicina']
-        racun_id=request.form['racun']
-        voce_id=request.form['voce']
+        racun_id=request.form['racun_id']
+        voce_id=request.form['voce_id']
 
-        my_stavka=Stavka_racuna(datum_isporuke,kolicina, racun_id, voce_id)
+        my_stavka=Stavka_racuna(datum_isporuke,kolicina, voce_id, racun_id)
         db.session.add(my_stavka)
         db.session.commit()
 

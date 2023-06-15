@@ -44,11 +44,13 @@
                   <td>{{ row.naziv }}</td>
                   <td>{{ row.cijena }}</td>
                   <td>{{ row.grad.naziv }}</td>
-                  <td>
+                  <td >
+                    <div style="float: right;">
                     <a href="/update5/{{ row.id }}" class="btn btn-warning btn-s" data-toggle="modal"
-                      data-target="#modal-edit{{ row.id }}">Uredi</a>
+                      data-target="#modal-edit{{ row.id }}" >Uredi</a>
                     <a href="/delete5/{{ row.id }}" class="btn btn-danger btn-s"
                       onclick="return confirm('Jeste li sigurni da želite izbrisati?')">Izbriši</a>
+                    </div>
                   </td>
                 </tr>
               {% endif %}
