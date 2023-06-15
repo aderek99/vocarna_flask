@@ -37,59 +37,59 @@
           <tbody>
             {% set prikazana_voca = [] %}
             {% for row in voce %}
-              {% if row.naziv not in prikazana_voca %}
-                {% set prikazana_voca = prikazana_voca + [row.naziv] %}
-                <tr>
-                  <td>{{ row.id }}</td>
-                  <td>{{ row.naziv }}</td>
-                  <td>{{ row.cijena }}</td>
-                  <td>{{ row.grad.naziv }}</td>
-                  <td >
-                    <div style="float: right;">
-                    <a href="/update5/{{ row.id }}" class="btn btn-warning btn-s" data-toggle="modal"
-                      data-target="#modal-edit{{ row.id }}" >Uredi</a>
-                    <a href="/delete5/{{ row.id }}" class="btn btn-danger btn-s"
-                      onclick="return confirm('Jeste li sigurni da želite izbrisati?')">Izbriši</a>
-                    </div>
-                  </td>
-                </tr>
-                <div id="modal-edit{{ row.id }}" class="modal fade" role="dialog">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h4 class="modal-title">Ažuriranje informacija</h4>
+            {% if row.naziv not in prikazana_voca %}
+            {% set prikazana_voca = prikazana_voca + [row.naziv] %}
+            <tr>
+              <td>{{ row.id }}</td>
+              <td>{{ row.naziv }}</td>
+              <td>{{ row.cijena }}</td>
+              <td>{{ row.grad.naziv }}</td>
+              <td>
+                <div style="float: right;">
+                  <a href="/update5/{{ row.id }}" class="btn btn-warning btn-s" data-toggle="modal"
+                    data-target="#modal-edit{{ row.id }}">Uredi</a>
+                  <a href="/delete5/{{ row.id }}" class="btn btn-danger btn-s"
+                    onclick="return confirm('Jeste li sigurni da želite izbrisati?')">Izbriši</a>
+                </div>
+              </td>
+            </tr>
+            <div id="modal-edit{{ row.id }}" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Ažuriranje informacija</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form action="{{ url_for('update5') }}" method="POST">
+                      <div class="form-group">
+                        <label>Naziv:</label>
+                        <input type="hidden" name="id" value="{{ row.id }}">
+                        <input type="text" class="form-control" name="naziv" value="{{ row.naziv }}">
                       </div>
-                      <div class="modal-body">
-                        <form action="{{ url_for('update5') }}" method="POST">
-                          <div class="form-group">
-                            <label>Naziv:</label>
-                            <input type="hidden" name="id" value="{{ row.id }}">
-                            <input type="text" class="form-control" name="naziv" value="{{ row.naziv }}">
-                          </div>
-                          <div class="form-group">
-                            <label>Cijena:</label>
-                            <input type="number" class="form-control" name="cijena" value="{{ row.cijena }}">
-                          </div>
-                          <div class="form-group">
-                            <label>Grad:</label>
-                            <select class="form-control selectpicker" name="grad">
-                              {% for grad in gradovi %}
-                              <option value="{{grad.id}}">{{grad.naziv}}</option>
-                              {% endfor %}
-                            </select>
-                          </div>
-                          <div class="form-group">
-                            <button class="btn btn-primary" type="submit">Ažuriraj</button>
-                          </div>
-                        </form>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
-                        </div>
+                      <div class="form-group">
+                        <label>Cijena:</label>
+                        <input type="number" class="form-control" name="cijena" value="{{ row.cijena }}">
                       </div>
+                      <div class="form-group">
+                        <label>Grad:</label>
+                        <select class="form-control selectpicker" name="grad">
+                          {% for grad in gradovi %}
+                          <option value="{{grad.id}}">{{grad.naziv}}</option>
+                          {% endfor %}
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <button class="btn btn-primary" type="submit">Ažuriraj</button>
+                      </div>
+                    </form>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
                     </div>
                   </div>
                 </div>
-              {% endif %}
+              </div>
+            </div>
+            {% endif %}
             {% endfor %}
           </tbody>
         </table>

@@ -8,30 +8,32 @@
 
 {% block body %}
 
-    <div class="well text-center" style="background-color:  #e1dfdf;">
-      <a href="{{url_for('Index')}}" style="color: black;text-decoration: none;"><h1>Voćarna</a><a href="{{url_for('odjava')}}"><i class='fas fa-sign-out-alt pull-right' style="color: black;"  ></i></a></h1>
+<div class="well text-center" style="background-color:  #e1dfdf;">
+  <a href="{{url_for('Index')}}" style="color: black;text-decoration: none;">
+    <h1>Voćarna
+  </a><a href="{{url_for('odjava')}}"><i class='fas fa-sign-out-alt pull-right' style="color: black;"></i></a></h1>
+</div>
+<div class="navBar">
+  <nav class="navbar navbar-default" style="background-color: #ececec;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      </div>
+      <ul class="nav navbar-nav ">
+        <li><a href="{{url_for('Employee')}}">Zaposlenici</a></li>
+        <li><a href="{{url_for('Fruit')}}">Voće</a></li>
+        <li><a href="{{url_for('Item_bill')}}">Stavka računa</a></li>
+        <li><a href="{{url_for('Bill')}}">Računi</a></li>
+        <li><a href="{{url_for('Customer')}}">Kupci</a></li>
+        <li><a href="{{url_for('City')}}">Gradovi</a></li>
+        <li><a href="{{url_for('State')}}">Države</a></li>
+        <li><a href="{{url_for('Delivery')}}">Dostave</a></li>
+      </ul>
     </div>
-    <div class="navBar">
-        <nav class="navbar navbar-default" style="background-color: #ececec;">
-            <div class="container-fluid">
-              <div class="navbar-header">
-              </div>
-              <ul class="nav navbar-nav ">
-                <li><a href="{{url_for('Employee')}}">Zaposlenici</a></li>
-                <li><a href="{{url_for('Fruit')}}">Voće</a></li>
-                <li><a href="{{url_for('Item_bill')}}">Stavka računa</a></li>
-                <li><a href="{{url_for('Bill')}}">Računi</a></li>
-                <li><a href="{{url_for('Customer')}}">Kupci</a></li>
-                <li><a href="{{url_for('City')}}">Gradovi</a></li>
-                <li><a href="{{url_for('State')}}">Države</a></li>
-                <li><a href="{{url_for('Delivery')}}">Dostave</a></li>
-              </ul>
-            </div>
-          </nav>
-    </div>
+  </nav>
+</div>
 
-    
 
-    
+
+
 
 {% endblock %}

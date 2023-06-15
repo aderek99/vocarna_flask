@@ -1,56 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="static/css/login.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-	<title>Voćarna</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/css/login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>Voćarna</title>
 </head>
+
 <body>
-	  <div class="container">
-		<input type="checkbox" id="flip">
-		<div class="cover">
-		  <div class="front">
-			<div class="text">
-			  <span class="text-1">Voće sadrži ugljikohidrate, vitamine, minerale, biljna vlakna,<br> vodu i mnoge aktivne tvari koje pomažu pri održavanju</span>
-			  <span class="text-2">našeg zdravlja.</span>
-			</div>
-		  </div>
-		  <div class="back">
-			<div class="text">
-			</div>
-		  </div>
-		</div>
-		<div class="forms">
-			<div class="form-content">
-			  <div class="signup-form">
-          <div class="title">Registracija</div>
-        <form method="post">
-          <div class="input-boxes">
-            <div class="input-box">
-            <i class="fas fa-user"></i>
-            <input type="text" placeholder="Unesite Vaše ime" id="ime" name="ime" required>
-            </div>
-            <div class="input-box">
-            <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="Unesite Vaš email" id="email" name="email" required>
-            </div>
-            <div class="input-box">
-            <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Unesite lozinku" id="lozinka" name="lozinka" required>
-            </div>
-            <div class="button input-box">
-            <input type="submit" value="Registriraj se">
-            </div>
-            <div class="text sign-up-text">Već imate račun? <a href="{{url_for('Login')}}"><label>Prijavite se</label></a></div>
-          </div>
-        </form>
+  <div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+        <div class="text">
+          <span class="text-1">Voće sadrži ugljikohidrate, vitamine, minerale, biljna vlakna,<br> vodu i mnoge aktivne
+            tvari koje pomažu pri održavanju</span>
+          <span class="text-2">našeg zdravlja.</span>
         </div>
-		</div>
-	  </div>
+      </div>
+      <div class="back">
+        <div class="text">
+        </div>
+      </div>
+    </div>
+    <div class="forms">
+      <div class="form-content">
+        <div class="signup-form">
+          <div class="title">Registracija</div>
+          <form method="post">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Unesite Vaše ime" id="ime" name="ime" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Unesite Vaš email" id="email" name="email" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Unesite lozinku" id="lozinka" name="lozinka" required>
+              </div>
+              <div class="button input-box">
+                <input type="submit" value="Registriraj se">
+              </div>
+              <div class="text sign-up-text">Već imate račun? <a href="{{url_for('Login')}}"><label>Prijavite
+                    se</label></a></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 </body>
+
 </html>
 
 

@@ -1,4 +1,7 @@
-body{
+body {
     background: #9fd3c7;
+}
 
+.container {
+    width: 1025px;
 }
