@@ -44,12 +44,58 @@
               <td>{{ row.racun.broj_racuna }}</td>
               <td>{{ row.voce.naziv }}</td>
               <td>
+                <div style="float: right;">
                 <a href="/update7/{{ row.id }}" class="btn btn-warning btn-s" data-toggle="modal"
                   data-target="#modal-edit{{ row.id }}">Uredi</a>
                 <a href="/delete7/{{ row.id }}" class="btn btn-danger btn-s"
                   onclick="return confirm ('Jeste li sigurni da želite izbrisati?')">Izbriši</a>
+                </div>
               </td>
             </tr>
+            <div id="modal-edit{{ row.id }}" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Ažuriranje informacija</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form action="{{ url_for('update7') }}" method="POST">
+                      <div class="form-group">
+                        <label>Datum isporuke:</label>
+                        <input type="hidden" name="id" value="{{ row.id }}">
+                        <input type="date" class="form-control" name="datum_isporuke" value="{{ row.datum_isporuke }}">
+                      </div>
+                      <div class="form-group">
+                        <label>Količina:</label>
+                        <input type="number" class="form-control" name="kolicina" value="{{ row.kolicina }}">
+                      </div>
+                      <div class="form-group">
+                        <label>Broj računa:</label>
+                        <select class="form-control selectpicker" name="racun_id" required="1">
+                          {% for racun in racuni %}
+                          <option value="{{ racun.id }}">{{ racun.broj_racuna }}</option>
+                          {% endfor %}
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label>Voće:</label>
+                        <select class="form-control selectpicker" name="voce_id" required="1">
+                          {% for vocka in voce %}
+                          <option value="{{ vocka.id }}">{{ vocka.naziv }}</option>
+                          {% endfor %}
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <button class="btn btn-primary" type="submit">Ažuriraj</button>
+                      </div>
+                    </form>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             {% endfor %}
           </tbody>
         </table>

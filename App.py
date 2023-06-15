@@ -385,6 +385,7 @@ def update4():
         my_grad.naziv=request.form['naziv']
         my_grad.broj_stanovnika=request.form['broj_stanovnika']
         my_grad.drzava_id = request.form['drzava']
+        my_grad.drzava_id=request.form['drzava']
   
         db.session.commit()
         flash("Uspješno ste anžurirali podatke!")
@@ -432,6 +433,7 @@ def update5():
 
         my_voce.naziv=request.form['naziv']
         my_voce.cijena=request.form['cijena']
+        my_voce.grad_id=request.form['grad']
   
         db.session.commit()
         flash("Uspješno ste anžurirali podatke!")
@@ -484,6 +486,9 @@ def update6():
         my_racun.broj_racuna=request.form['broj_racuna']
         my_racun.kolicina=request.form['kolicina']
         my_racun.ukupna_cijena=request.form['ukupna_cijena']
+        my_racun.dostava_id=request.form['dostava']
+        my_racun.kupac_id=request.form['kupac']
+        my_racun.zaposlenik_id=request.form['zaposlenik']
   
         db.session.commit()
         flash("Uspješno ste anžurirali podatke!")
@@ -534,6 +539,8 @@ def update7():
 
         my_stavka.datum_isporuke=request.form['datum_isporuke']
         my_stavka.kolicina=request.form['kolicina']
+        my_stavka.racun_id=request.form['racun_id']
+        my_stavka.voce_id=request.form['voce_id']
   
         db.session.commit()
         flash("Uspješno ste anžurirali podatke!")

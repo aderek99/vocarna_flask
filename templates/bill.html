@@ -86,25 +86,25 @@
                         <label>Dostava:</label>
                         <select class="form-control selectpicker" name="dostava">
                           {% for dostava in dostave %}
-                          <option value="{{ dostava.id }}" {% if dostava.id == row.dostava.id %}selected{% endif %}>
+                          <option value="{{ dostava.id }}">
                             {{ dostava.naziv }}</option>
-                          {% endfor %}
+                            {% endfor %}
                         </select>
                       </div>
                       <div class="form-group">
                         <label>Kupac:</label>
                         <select class="form-control selectpicker" name="kupac">
                           {% for kupac in kupci %}
-                          <option value="{{ kupac.id }}" {% if kupac.id == row.kupac.id %}selected{% endif %}>
+                          <option value="{{ kupac.id }}">
                             {{ kupac.naziv }}</option>
-                          {% endfor %}
+                            {% endfor %}
                         </select>
                       </div>
                       <div class="form-group">
                         <label>Zaposlenik:</label>
                         <select class="form-control selectpicker" name="zaposlenik">
                           {% for zaposlenik in zaposlenici %}
-                          <option value="{{ zaposlenik.id }}" {% if zaposlenik.id == row.zaposlenik.id %}selected{% endif %}>
+                          <option value="{{ zaposlenik.id }}" >
                             {{ zaposlenik.email }}</option>
                           {% endfor %}
                         </select>
