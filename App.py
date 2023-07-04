@@ -22,13 +22,17 @@ class Zaposlenik(db.Model):
     email = db.Column(db.String(50))
     telefon=db.Column(db.String(50))
     racuni = db.relationship('Racun', backref='zaposlenik')
+    korisnik_id = db.Column(db.Integer, db.ForeignKey('korisnici.id'), unique=True)
 
-    def __init__(self, ime, prezime, adresa,email, telefon ):
-        self.ime=ime
-        self.prezime=prezime
-        self.adresa=adresa
-        self.email=email
-        self.telefon=telefon
+
+    def __init__(self, ime, prezime, adresa, email, telefon):
+        self.ime = ime
+        self.prezime = prezime
+        self.adresa = adresa
+        self.email = email
+        self.telefon = telefon
+
+
 
 class Kupac(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -123,6 +127,8 @@ class Korisnik(db.Model):
     ime = db.Column(db.String(50), nullable=False)
     email = db.Column(db.String(50), unique=True, nullable=False)
     lozinka = db.Column(db.String(200), nullable=False)
+    zaposlenik = db.relationship('Zaposlenik', backref='korisnik', uselist=False)
+
 
     def __init__(self, ime, email, lozinka):
         self.ime = ime
